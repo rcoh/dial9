@@ -18,7 +18,7 @@ dial9-core = { workspace = true, features = ["pipeline"] }
 bon = "3"
 # `sync` is used directly (S3Uploader holds a tokio Mutex); do not rely on the
 # aws-smithy stack to enable it.
-tokio = { version = "1", features = ["fs", "sync"], default-features = false }
+tokio = { version = "1", features = ["fs", "sync", "time"], default-features = false }
 tracing = "0.1.44"
 aws-sdk-s3 = { version = "1", default-features = false, features = [
     "behavior-version-latest",
@@ -36,6 +36,8 @@ serde_json = "1"
 dial9-core = { workspace = true, features = ["pipeline", "test-util"] }
 assert2 = { workspace = true }
 async-trait = "0.1.89"
+aws-smithy-runtime-api = "1"
+aws-smithy-types = "1"
 flate2 = "1"
 tempfile = "3"
 tokio = { version = "1.52.0", features = [
@@ -51,3 +53,4 @@ tokio = { version = "1.52.0", features = [
 s3s = "0.14.1"
 s3s-fs = "0.14.1"
 s3s-aws = "0.14.1"
+turmoil-net = "=0.1.0"

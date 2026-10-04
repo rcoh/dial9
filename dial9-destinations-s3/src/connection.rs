@@ -5,7 +5,8 @@
 //! unreachable — the SDK's built-in retries handle per-request retries,
 //! while this provides higher-level circuit-breaking across requests.
 
-use std::time::{Duration, Instant};
+use std::time::Duration;
+use tokio::time::Instant;
 
 const INITIAL_BACKOFF: Duration = Duration::from_secs(1);
 const MAX_BACKOFF: Duration = Duration::from_secs(300); // 5 minutes
